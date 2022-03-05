@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab5</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="functions.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <h1>Pizza Order Form</h1>
+    <form action="" id="ex1">
+
+        <fieldset>
+            <label>size: </label>
+            <input type="range" min="1" max="4" value="1" name="slider" id="slider" onchange="ChangePizzaSize()">
+            <label id="prop">small 6$</label>
+            <br>
+            <div id="Psize2">
+                <img id="Psize" src="https://tse3.mm.bing.net/th?id=OIP.MNsmg1aM4sVM48De4SRz2AHaHa&pid=Api&P=0&w=168&h=168" alt="pizza">
+            </div>
+        </fieldset>
+
+        <fieldset id="meat">
+            <legend>Meat Toppings (+2$ for each)</legend>
+            <input type="checkbox" name="Pepperoni" /> Pepperoni
+            <br>
+            <input type="checkbox" name="Sausage" /> Sausage
+            <br>
+            <input type="checkbox" name="Ground Beef" /> Ground Beef
+            <br>
+            <input type="checkbox" name="Anchovy" /> Anchovy
+            <br>
+            <input type="checkbox" name="Chicken" /> Chicken
+
+        </fieldset>
+
+        <fieldset id="vegetables">
+            <legend>Veggies (+1$ for each)</legend>
+            <input type="checkbox" name="Tomatoes" /> Tomatoes
+            <br>
+            <input type="checkbox" name="Onions" /> Onions
+            <br>
+            <input type="checkbox" name="Olives" /> Olives
+            <br>
+            <input type="checkbox" name="Mushrooms" /> Mushrooms
+            <br>
+            <input type="checkbox" name="Pineapple" /> Pineapple
+            <br>
+            <input type="checkbox" name="Spinach" /> Spinach
+            <br>
+            <input type="checkbox" name="Jalapeno" /> Jalapeno
+        </fieldset>
+
+        <fieldset id="cheese">
+            <legend>Cheese</legend>
+            <input type="radio" name="cheese" value="Regular Cheese" /> Regular Cheese
+            <br>
+            <input type="radio" name="cheese" value="No Cheese" /> No Cheese
+            <br>
+            <input type="radio" name="cheese" value="Extra Cheese" /> Extra Cheese ($3)
+        </fieldset>
+        <fieldset>
+            <legend>Payment</legend>
+            <input type="radio" name="payment" value="cash" /> Cash
+            <input type="radio" name="payment" value="masterCard" /> MasterCard
+            <input type="radio" name="payment" value="visa" /> Visa
+        </fieldset>
+        <br>
+        <input type="button" value="Next" onclick="gotoPage('ex2')">
+    </form>
+    <form action="" id="ex2">
+        <label class="addressDetail">First name:</label><br>
+        <input type="text" name="fname" id="fname" class="required"><br>
+        <label class="addressDetail">Last name: </label><br>
+        <input type="text" name="lname" id="lname" class="required"><br>
+        <label class="addressDetail">E-mail: </label><br>
+        <input type="email" name="email" id="email" class="required"><br>
+        <label class="addressDetail">Phone Number: </label><br>
+        <input type="text" name="phone" id="phone" class="required"><br>
+        <label class="addressDetail">City: </label><br>
+        <select class="addressDetail required" name="city" id="city">
+                <option>--please choose an option--</option>
+                <option>Beirut</option>
+                <option>Sidon</option>
+                <option>Tripoli</option>
+                <option>Nabateye</option>
+            </select><br>
+        <label class="addressDetail">Adress: </label><br>
+        <textarea name="adress" id="adress" class="required"></textarea><br>
+        <input type="button" value="Back" onclick="gotoPage('ex1')">
+        <input type="button" value="Next" onclick="gotoPage('ordersummary'); fillSummary()">
+    </form>
+    <div id="OrderSummary">
+        <h1>Order Summary</h1>
+        <h2>Deliver to</h2>
+        <p id="dlvrTo"></p>
+        <h2>Order</h2>
+        <ul id="orderList"></ul>
+        <h2 id="total">Total</h2>
+        <input type="button" value="Back" onclick="gotoPage('ex2')">
+    </div>
+</body>
+
+</html>
